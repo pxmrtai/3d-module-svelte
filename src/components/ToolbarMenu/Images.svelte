@@ -1,0 +1,54 @@
+<script>
+
+import { handleClickItemMenu } from "../action.svelte";
+
+</script>
+<li class="sub-menu-with-tool" id="images-menu">
+    <a id="images" href="javascript:void(0);" class="header-sub-menu" name="images-menu"on:click={handleClickItemMenu}
+      ><span>Images</span><i class="arrow fa fa-angle-right pull-right" /></a
+    >
+    <ul>
+      <li>
+        <form id="file-upload-form" class="uploader">
+          <input
+            id="file-upload"
+            type="file"
+            name="fileUpload"
+            accept="image/*"
+          />
+
+          <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden" />
+            <div id="start">
+              <i class="fa fa-download" aria-hidden="true" />
+              <div>Select a file or drag here</div>
+              <div id="notimage" class="hidden">Please select an image</div>
+              <span id="file-upload-btn" class="btn btn-primary"
+                >Select a file</span
+              >
+            </div>
+            <!-- <div id="response" class="hidden">
+                  <div id="messages"></div>
+                  <progress class="progress" id="file-progress" value="0">
+                    <span>0</span>%
+                  </progress>
+                </div> -->
+          </label>
+        </form>
+        <div class="picture" id="output">
+          <img
+            src="model/pictures/ironman.jpeg"
+            style="height: 100px"
+            class="demo-picture"
+            alt="model/pictures/ironman.jpeg"
+          />
+          <img
+            src="model/pictures/spider-man.jpg"
+            style="height: 100px"
+            class="demo-picture"
+            alt="model/pictures/spider-man.jpg"
+          />
+        </div>
+      </li>
+    </ul>
+  </li>
