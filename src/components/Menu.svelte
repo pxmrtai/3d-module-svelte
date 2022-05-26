@@ -4,14 +4,11 @@
   import Images from "./ToolbarMenu/Images.svelte";
   import Text from "./ToolbarMenu/Text.svelte";
   import ArtWord from "./ToolbarMenu/ArtWord.svelte";
-import { menuValue } from "../constant/main.svelte";
+  import { menuValue } from "../constant/main.svelte";
+  import ToolbarMenu from "./ToolbarMenu.svelte";
 </script>
 
 <div class="tool-menu" id="tool-menu">
-  <BackgroundColor />
-  <Images />
-  <Text />
-  <ArtWord />
   <aside class="sidebar" id="sidebar">
     <div id="leftside-navigation" class="nano">
       <ul class="nano-content">
@@ -21,4 +18,13 @@ import { menuValue } from "../constant/main.svelte";
       </ul>
     </div>
   </aside>
+  {#each menuValue as item}
+    <ToolbarMenu data={item}>
+      {#if item.content}
+        <svelte:component this={item.content} />
+      {:else}
+        not thing
+      {/if}
+    </ToolbarMenu>
+  {/each}
 </div>
